@@ -1,0 +1,20 @@
+[
+    { "name": "The Hobbit", "code": "HOB", "year": 2026, "legal_until": 2028 },
+    { "name": "Marvel Super Heroes", "code": "MSH", "year": 2026, "legal_until": 2028 },
+    { "name": "Secrets of Strixhaven", "code": "SOS", "year": 2026, "legal_until": 2028 },
+    { "name": "Teenage Mutant Ninja Turtles", "code": "TMT", "year": 2026, "legal_until": 2028 },
+    { "name": "Lorwyn Eclipsed", "code": "ECL", "year": 2025, "legal_until": 2028 },
+    { "name": "Avatar: The Last Airbender", "code": "TLA", "year": 2025, "legal_until": 2028 },
+    { "name": "Marvel’s Spider-Man", "code": "SPM", "year": 2025, "legal_until": 2028 },
+    { "name": "Edge of Eternities", "code": "EOE", "year": 2025, "legal_until": 2027 },
+    { "name": "FINAL FANTASY", "code": "FIN", "year": 2025, "legal_until": 2027 },
+    { "name": "Tarkir: Dragonstorm", "code": "TDM", "year": 2025, "legal_until": 2027 },
+    { "name": "Aetherdrift", "code": "DFT", "year": 2025, "legal_until": 2027 },
+    { "name": "Foundations", "code": "FDN", "year": 2024, "legal_until": 2028 },
+    { "name": "Duskmourn: House of Horror", "code": "DSK", "year": 2024, "legal_until": 2027 },
+    { "name": "Bloomburrow", "code": "BLB", "year": 2024, "legal_until": 2027 },
+    { "name": "Outlaws of Thunder Junction (including The Big Score)", "code": "OTJ", "year": 2024, "legal_until": 2027 },
+    { "name": "Murders at Karlov Manor", "code": "MKM", "year": 2024, "legal_until": 2027 },
+    { "name": "The Lost Caverns of Ixalan", "code": "LCI", "year": 2023, "legal_until": 2027 },
+    { "name": "Wilds of Eldraine", "code": "WOE", "year": 2023, "legal_until": 2027 }
+]

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Scryfall Standard Until",
+  "description": "Shows when a Standard-legal card rotates out of Standard on Scryfall card pages.",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://scryfall.com/card/*",
+        "https://www.scryfall.com/card/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["mtg_sets.json"],
+      "matches": [
+        "https://scryfall.com/*",
+        "https://www.scryfall.com/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "scryfall-standard-until@local"
+    }
+  }
+}
