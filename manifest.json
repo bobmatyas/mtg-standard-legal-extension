@@ -1,13 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Scryfall Standard Until",
-  "description": "Shows when a Standard-legal card rotates out of Standard on Scryfall card pages.",
-  "version": "1.0.0",
+  "name": "MTG Standard Until",
+  "description": "Shows when a Standard-legal card rotates out of Standard on Scryfall, TCGPlayer, and Manapool.",
+  "version": "1.1.0",
   "content_scripts": [
     {
       "matches": [
         "https://scryfall.com/card/*",
-        "https://www.scryfall.com/card/*"
+        "https://www.scryfall.com/card/*",
+        "https://tcgplayer.com/product/*",
+        "https://www.tcgplayer.com/product/*",
+        "https://manapool.com/card/*",
+        "https://www.manapool.com/card/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
@@ -18,7 +22,11 @@
       "resources": ["mtg_sets.json"],
       "matches": [
         "https://scryfall.com/*",
-        "https://www.scryfall.com/*"
+        "https://www.scryfall.com/*",
+        "https://tcgplayer.com/*",
+        "https://www.tcgplayer.com/*",
+        "https://manapool.com/*",
+        "https://www.manapool.com/*"
       ]
     }
   ],
