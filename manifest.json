@@ -2,7 +2,12 @@
   "manifest_version": 3,
   "name": "MTG Standard Until",
   "description": "Shows when a Standard-legal card rotates out of Standard on Scryfall, TCGPlayer, and Manapool.",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "MTG Standard Until",
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -13,7 +18,7 @@
         "https://manapool.com/card/*",
         "https://www.manapool.com/card/*"
       ],
-      "js": ["content.js"],
+      "js": ["sites.js", "content.js"],
       "run_at": "document_idle"
     }
   ],

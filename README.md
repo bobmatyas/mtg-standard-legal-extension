@@ -6,6 +6,8 @@ A Manifest V3 content script that shows when a Standard-legal card rotates, usin
 - **TCGPlayer:** appends **(year)** to the Standard legality indicator
 - **Manapool:** adds **Standard Legal Until {year}** under the legal-formats list
 
+Click the toolbar icon to turn Scryfall, Manapool, and TCGPlayer on or off. All three are on by default.
+
 ## Load the extension
 
 ### Chrome / Edge

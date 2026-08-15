@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MTG Standard Until</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        font: 14px/1.4 system-ui, sans-serif;
+        margin: 0;
+        padding: 12px 14px;
+        width: 200px;
+      }
+
+      h1 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 0 0 8px;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MTG Standard Until</h1>
+    <p>Show the standard legal until date when browsing cards on the following websites:</p>
+    <label><input type="checkbox" id="scryfall" /> Scryfall</label>
+    <label><input type="checkbox" id="manapool" /> Manapool</label>
+    <label><input type="checkbox" id="tcgplayer" /> TCGPlayer</label>
+    <script src="sites.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

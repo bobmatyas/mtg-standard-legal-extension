@@ -2,11 +2,14 @@
   let setUntil = new Map();
   let observer = null;
   let observedNode = null;
+  let siteEnabled = true;
 
   /**
    * Injects the Standard rotation year for the current site.
    */
   function inject() {
+    if (!siteEnabled) return;
+
     const host = location.hostname.replace(/^www\./, '');
     if (host === 'scryfall.com') {
       injectScryfall();
@@ -164,6 +167,46 @@
   }
 
   /**
+   * Removes this extension's injected markup from the current page.
+   */
+  function removeInjections() {
+    const { dt } = findStandardRow();
+    if (dt && dt.hasAttribute('data-standard-until')) {
+      dt.querySelector('b')?.remove();
+      dt.querySelector('br')?.remove();
+      dt.removeAttribute('data-standard-until');
+    }
+    for (const item of document.querySelectorAll('.card-legality-item')) {
+      item.style.height = '';
+    }
+
+    for (const indicator of document.querySelectorAll(
+      '.legalities__legality__indicator[data-standard-until]'
+    )) {
+      const until = indicator.getAttribute('data-standard-until');
+      const suffix = ` (${until})`;
+      if (
+        indicator.lastChild?.nodeType === Node.TEXT_NODE &&
+        indicator.lastChild.textContent === suffix
+      ) {
+        indicator.removeChild(indicator.lastChild);
+      }
+      indicator.removeAttribute('data-standard-until');
+    }
+
+    document.querySelector('li[data-standard-until]')?.remove();
+  }
+
+  /**
+   * Reads whether the current site is enabled in storage.
+   */
+  async function refreshEnabled() {
+    const sites = await chrome.storage.sync.get(SITE_DEFAULTS);
+    const key = siteKeyFromHost(location.hostname);
+    siteEnabled = Boolean(key && sites[key] !== false);
+  }
+
+  /**
    * Re-runs injection when the page swaps card/product content.
    */
   function observePage() {
@@ -188,9 +231,16 @@
       sets.map((set) => [String(set.code).toUpperCase(), set.legal_until])
     );
 
+    await refreshEnabled();
     inject();
     observePage();
     window.addEventListener('popstate', inject);
+    chrome.storage.onChanged.addListener(async (_changes, area) => {
+      if (area !== 'sync') return;
+      await refreshEnabled();
+      if (siteEnabled) inject();
+      else removeInjections();
+    });
   }
 
   init();

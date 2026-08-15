@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
+
+# Packaged / signed extension artifacts
+*.crx
+*.pem
+*.xpi
+*.zip
+web-ext-artifacts/
+
+# Node (if added later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Secrets
+.env
+.env.*
